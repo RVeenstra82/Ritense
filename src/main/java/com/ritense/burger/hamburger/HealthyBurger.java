@@ -16,7 +16,7 @@ public class HealthyBurger extends Hamburger {
 
 	@Override
 	public double getBasicPrice() {
-		return 5.99;
+		return 4.49;
 	}
 
 }

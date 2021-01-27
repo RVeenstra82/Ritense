@@ -11,6 +11,7 @@ import com.ritense.burger.hamburger.BasicBurger;
 import com.ritense.burger.hamburger.ComboBurger;
 import com.ritense.burger.hamburger.Hamburger;
 import com.ritense.burger.hamburger.HealthyBurger;
+import com.ritense.burger.hamburger.items.Addition;
 import com.ritense.burger.hamburger.items.BreadTypes;
 import com.ritense.burger.hamburger.items.Meat;
 import com.ritense.burger.hamburger.items.Topping;
@@ -28,14 +29,21 @@ class BurgerTypesTest {
 	void makeHealthyBurger() {
 		Hamburger burger = new HealthyBurger( BreadTypes.CIABATTA, Meat.VEGAN_PATTY );
 		assertNotNull( burger );
-		assertEquals( 5.99, burger.getBasicPrice() );
+		assertEquals( 4.49, burger.getBasicPrice() );
+		
 	}
 	
 	@Test
 	void makeComboBurger() {
 		Hamburger burger = new ComboBurger( BreadTypes.WHITE, Meat.KOBY_BEEF_PATTY );
 		assertNotNull( burger );
-		assertEquals( 7.49, burger.getBasicPrice() );
+		assertEquals( 3.49, burger.getBasicPrice() );
+	}
+	
+	@Test
+	void makeComboBurgerWithAdditions() {
+		Hamburger burger = new ComboBurger(BreadTypes.BRIOCHE, Meat.FISH_PATTY);
+		assertNotNull( burger );
 	}
 	
 	@Test
@@ -60,6 +68,31 @@ class BurgerTypesTest {
 		assertThrows(MaxToppingsException.class, () -> {
 			burger.addTopping( Topping.SAUCES );
 		});
+	}
+	
+	@Test
+	void testToStringBasicBurger() throws MaxToppingsException {
+		Hamburger burger = new BasicBurger( BreadTypes.WHOLEGRAIN, Meat.BLACK_ANGUS_PATTY );
+		// Adding 4 toppings
+		burger.addTopping(Topping.CHEESE);
+		burger.addTopping(Topping.LETTUCE);
+		burger.addTopping(Topping.ONION);
+		burger.addTopping(Topping.PICKLE);
+		
+		// Remove all the new line and tabs from the output message
+		String cleanString = burger.toString().replaceAll("\n", "").replaceAll("\t", "");
+		assertEquals("Hamburger: €4,99Toppings: Cheese,Lettuce,Onion,Pickle + €2,00Additions: None + €0,00Total price: €6,99", cleanString );
+	}
+	
+	@Test
+	void testToStringComboBurger() throws MaxToppingsException {
+		Hamburger burger = new BasicBurger( BreadTypes.WHOLEGRAIN, Meat.BLACK_ANGUS_PATTY );
+		// Add additions
+		burger.addAddition(Addition.COCA_COLA);
+		
+		// Remove all the new line and tabs from the output message
+		String cleanString = burger.toString().replaceAll("\n", "").replaceAll("\t", "");
+		assertEquals("Hamburger: €4,99Toppings: None + €0,00Additions: Coka Cola + €1,60Total price: €6,59", cleanString );
 	}
 
 }

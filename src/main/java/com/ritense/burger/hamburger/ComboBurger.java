@@ -4,22 +4,13 @@ import com.ritense.burger.hamburger.items.BreadTypes;
 import com.ritense.burger.hamburger.items.Meat;
 
 public class ComboBurger extends Hamburger {
-	private String[] additions;
-	
 	public ComboBurger( BreadTypes bread, Meat meat ) {
 		super( bread, meat);
-		
-		additions = new String[2];
-	}
-	
-	// TODO Add better method for handling the additions;
-	public String[] getAdditions() {
-		return additions;
 	}
 	
 	@Override
 	public double getBasicPrice() {
-		return 7.49;
+		return 3.49;
 	}
 
 	@Override
