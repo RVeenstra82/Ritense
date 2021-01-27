@@ -7,14 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import com.ritense.burger.exception.MaxToppingsException;
-import com.ritense.burger.hamburger.BasicBurger;
-import com.ritense.burger.hamburger.ComboBurger;
-import com.ritense.burger.hamburger.Hamburger;
-import com.ritense.burger.hamburger.HealthyBurger;
 import com.ritense.burger.hamburger.items.Addition;
 import com.ritense.burger.hamburger.items.BreadTypes;
 import com.ritense.burger.hamburger.items.Meat;
 import com.ritense.burger.hamburger.items.Topping;
+import com.ritense.burger.model.BasicBurger;
+import com.ritense.burger.model.ComboBurger;
+import com.ritense.burger.model.Hamburger;
+import com.ritense.burger.model.HealthyBurger;
 
 class BurgerTypesTest {
 

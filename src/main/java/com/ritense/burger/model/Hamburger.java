@@ -1,4 +1,4 @@
-package com.ritense.burger.hamburger;
+package com.ritense.burger.model;
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -79,6 +79,10 @@ public abstract class Hamburger {
 		return BurgerPrice.calculateTotal( this ); 
 	}
 	
+	/**
+	 * Confience method that will either return a comma seperated String of chosen toppings or (when none is added) return the text None
+	 * @return
+	 */
 	private String getToppingString() {
 		if ( toppings.size() == 0 ) {
 			return "None";
@@ -89,6 +93,10 @@ public abstract class Hamburger {
 				.collect(Collectors.joining(","));
 	}
 	
+	/**
+	 * Confience method that will either return a comma seperated String of chosen additions or (when none is added) return the text None
+	 * @return
+	 */
 	private String getAdditionstring() {
 		if ( additions.size() == 0 ) {
 			return "None";
@@ -99,6 +107,13 @@ public abstract class Hamburger {
 				.collect(Collectors.joining(","));
 	}
 	
+	/**
+	 * This will output the following
+	 *  - The basic price of the Hamburger
+	 *  - A list of chosen topics and what it will cost
+	 *  - A list of chosen additions and what it will cost
+	 *  - A total price for the burger
+	 */
 	@Override
 	public String toString() {
 		return "Hamburger:\t €" + df.format(getBasicPrice())

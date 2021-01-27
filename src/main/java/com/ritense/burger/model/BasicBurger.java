@@ -1,4 +1,4 @@
-package com.ritense.burger.hamburger;
+package com.ritense.burger.model;
 
 import com.ritense.burger.hamburger.items.BreadTypes;
 import com.ritense.burger.hamburger.items.Meat;

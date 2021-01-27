@@ -1,5 +1,8 @@
 package com.ritense.burger.hamburger.items;
 
+/**
+ * The different type of breads 
+ */
 public enum BreadTypes {
 	WHOLEGRAIN( "Wholegrain"), 
 	WHITE( "White" ), 

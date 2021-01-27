@@ -1,5 +1,8 @@
 package com.ritense.burger.hamburger.items;
 
+/**
+ * The different type of toppings 
+ */
 public enum Topping {
 	CHEESE( "Cheese" ), 
 	SAUCES( "Sauces" ), 

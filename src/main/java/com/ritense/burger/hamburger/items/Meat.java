@@ -1,5 +1,8 @@
 package com.ritense.burger.hamburger.items;
 
+/**
+ * The different type of meats 
+ */
 public enum Meat {
 	BLACK_ANGUS_PATTY( "Black Angus Patty"), 
 	KOBY_BEEF_PATTY("Koby Beef Patty"), 

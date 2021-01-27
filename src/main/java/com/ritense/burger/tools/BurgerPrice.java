@@ -1,7 +1,10 @@
 package com.ritense.burger.tools;
 
-import com.ritense.burger.hamburger.Hamburger;
+import com.ritense.burger.model.Hamburger;
 
+/**
+ * A tool that will help to calculate the price for the toppings / additions or the total price of a burger
+ */
 public class BurgerPrice {
 	public static final double PRICE_PER_TOPPING = 0.50;
 	public static final double PRICE_PER_ADDITION = 1.60;
